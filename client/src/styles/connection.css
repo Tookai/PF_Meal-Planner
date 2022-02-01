@@ -39,3 +39,11 @@
 .connection button:active {
   transform: scale(0.95);
 }
+
+.separator {
+  width: 90%;
+  margin: 2rem auto;
+  height: 4px;
+  background-color: white;
+  border-radius: 0.5rem;
+}
