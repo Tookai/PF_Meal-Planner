@@ -1,0 +1,10 @@
+.week {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.week .box {
+  width: 25%;
+  padding: 1rem;
+}
