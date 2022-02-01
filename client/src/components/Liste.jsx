@@ -28,7 +28,6 @@ const Liste = () => {
         <li>ingrédients</li>
         <li>ingrédients</li>
         <li>ingrédients</li>
-        <li>ingrédients</li>
       </ul>
     </div>
   );

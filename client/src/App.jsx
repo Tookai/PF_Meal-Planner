@@ -6,6 +6,7 @@ import Random from "./components/Random";
 import Recette from "./components/Recette";
 import Week from "./components/Week";
 import Liste from "./components/Liste";
+import Connection from "./components/Connection";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="" element={<Random jour="Ce soir on pourrait manger" plat="Pâte Carbonara" />} />
-          <Route path="week" element={<Week />} />
+          <Route path="semaine" element={<Week />} />
           <Route path="liste" element={<Liste />} />
           <Route path="recette" element={<Recette />} />
+          <Route path="connection" element={<Connection />} />
         </Routes>
       </div>
       <Footer />
