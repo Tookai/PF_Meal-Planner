@@ -5,7 +5,13 @@ const Random = () => {
   const plat = "Pâtes Carbonara";
   return (
     <div className="random">
-      Ce soir on pourrait manger : <Link to="recette">{plat}</Link> !
+      <p>
+        Ce soir on pourrait manger : <Link to="recette">{plat}</Link> !
+      </p>
+      <img
+        src="https://images.pexels.com/photos/2703468/pexels-photo-2703468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        alt="Pâtes Carbonara"
+      />
     </div>
   );
 };

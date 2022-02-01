@@ -2,3 +2,10 @@
   padding: 1rem 0;
   text-align: center;
 }
+
+.random img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
+  margin: 1rem 0;
+}

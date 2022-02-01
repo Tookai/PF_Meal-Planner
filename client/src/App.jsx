@@ -1,9 +1,9 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Accueil from "./components/Accueil";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Random from "./components/Random";
+import Recette from "./components/Recette";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="" element={<Random />} />
-          <Route path="recette" element={<Accueil />} />
+          <Route path="recette" element={<Recette />} />
         </Routes>
       </div>
       <Footer />

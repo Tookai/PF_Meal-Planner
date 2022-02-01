@@ -1,0 +1,11 @@
+.recette {
+  text-align: center;
+}
+
+.recette ul {
+  list-style: none;
+  width: fit-content;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
