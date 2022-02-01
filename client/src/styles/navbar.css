@@ -19,10 +19,13 @@
   width: 200px;
   margin: 0 1rem;
   border-radius: 0.3rem;
-  transition: 400ms ease-out;
+  transition: all 200ms ease-out;
 }
 
 .navbar__wrapper h3:hover {
   background-color: blue;
-  transition: 400ms ease-in;
+}
+
+.navbar__wrapper h3:active {
+  transform: scale(0.95);
 }
