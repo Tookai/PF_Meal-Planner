@@ -1,0 +1,9 @@
+.liste {
+  text-align: center;
+}
+
+.liste ul {
+  list-style: none;
+  width: fit-content;
+  margin: 1rem auto;
+}

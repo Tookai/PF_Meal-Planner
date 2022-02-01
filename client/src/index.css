@@ -29,6 +29,11 @@ a:visited {
   text-decoration: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 .pad1 {
   padding: 1rem;
 }

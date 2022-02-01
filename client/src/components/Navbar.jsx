@@ -12,6 +12,9 @@ const Navbar = () => {
         <Link to="/week">
           <h3>cette semaine</h3>
         </Link>
+        <Link to="/liste">
+          <h3>ma liste</h3>
+        </Link>
       </div>
     </nav>
   );
