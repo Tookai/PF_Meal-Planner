@@ -1,0 +1,36 @@
+.add__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add__input,
+.add__btnIngredient,
+.add__btnAdd {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+}
+
+.add__btnIngredient {
+  background-color: aquamarine;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+
+.add__btnIngredient:active,
+.add__btnAdd:active {
+  transform: scale(0.95);
+}
+
+.add__btnAdd {
+  background-color: rgb(77, 77, 187);
+  color: white;
+  font-weight: bold;
+  margin: 1rem 0.2rem;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}

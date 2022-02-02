@@ -1,0 +1,14 @@
+.edit__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit__input {
+  font-size: 1rem;
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  text-align: center;
+}

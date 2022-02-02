@@ -7,6 +7,7 @@ import Recette from "./components/Recette";
 import Week from "./components/Week";
 import Liste from "./components/Liste";
 import Connection from "./components/Connection";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="liste" element={<Liste />} />
           <Route path="recette" element={<Recette />} />
           <Route path="connection" element={<Connection />} />
+          <Route path="admin" element={<Admin />} />
         </Routes>
       </div>
       <Footer />
