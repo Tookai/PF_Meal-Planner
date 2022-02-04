@@ -34,3 +34,18 @@
   transition: all 200ms ease-out;
   cursor: pointer;
 }
+
+.add__displayIngredients {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0rem;
+  flex-wrap: wrap;
+}
+
+.add__ingredient {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+}

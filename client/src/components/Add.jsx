@@ -18,7 +18,12 @@ const Add = () => {
 
   const handleAdd = (e) => {
     e.preventDefault();
+    const plat = { title: title, ingredients: recipe };
+    if (plat.title !== "" && plat.ingredients.length !== 0) {
+      console.log(plat);
+    }
   };
+
   return (
     <div className="add">
       <div className="add__add">
@@ -57,10 +62,11 @@ const Add = () => {
           >
             +1 Ingrédient
           </button>
-          <div>
+
+          <div className="add__displayIngredients">
             {recipe.length !== 0 &&
               recipe.map((item, index) => (
-                <span key={index}>
+                <span key={index} className="add__ingredient">
                   <p>{item}</p>
                   <button
                     onClick={(e) => {
