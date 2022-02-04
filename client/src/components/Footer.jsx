@@ -1,14 +1,17 @@
-import '../styles/footer.css'
-
-
+import "../styles/footer.css";
 
 const Footer = () => {
-    return (
-        <footer className='footer pad1'>
-            <p>&#169; All Rights Reserved</p>
-            <p>Author : <a href="https://github.com/Tookai">Thibaut Orcel</a></p>
-        </footer>
-    )
-}
+  return (
+    <footer className="footer pad1">
+      <p>&#169; All Rights Reserved</p>
+      <p>
+        Author :
+        <a href="https://github.com/Tookai" target="_blank">
+          Thibaut Orcel
+        </a>
+      </p>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
