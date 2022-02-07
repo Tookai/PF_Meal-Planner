@@ -53,4 +53,14 @@ router.get("/t/:title", async (req, res) => {
   }
 });
 
+// DELETE MEAL
+router.delete("", auth, async (req, res) => {
+  try {
+    await Meal.findByIdAndDelete(req.body.mealId);
+    res.status(200).json(`Plat supprimé par ${req.user.pseudo}`);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
