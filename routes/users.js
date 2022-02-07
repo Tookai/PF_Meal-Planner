@@ -4,6 +4,8 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+const auth = require("../middlewares/auth");
+
 // REGISTER A USER
 router.post("/register", async (req, res) => {
   try {
@@ -34,7 +36,7 @@ router.post("/login", async (req, res) => {
     const validPw = await bcrypt.compare(req.body.password, user.password);
     !validPw && res.status(400).json(`Le mot de passe est incorrect.`);
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_CODE, { expiresIn: "3d" });
+    const token = jwt.sign({ userId: user._id, userAdmin: user.admin }, process.env.JWT_CODE, { expiresIn: "3d" });
 
     res.status(200).json({ user: user.pseudo, token });
   } catch (err) {
@@ -51,10 +53,11 @@ router.post("/login", async (req, res) => {
 //
 
 // Search query
-router.get("/user", async (req, res) => {
+router.get("/user", auth, async (req, res) => {
   try {
+    const user = req.user;
     const found = await User.find({ pseudo: /pierre/ });
-    res.status(200).json(found);
+    res.status(200).json({found, user});
   } catch (err) {
     res.status(500).json(err);
   }
