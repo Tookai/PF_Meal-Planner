@@ -8,6 +8,8 @@ app.use(express.json());
 app.use(cors());
 dotenv.config();
 
+const userRoute = require("./routes/users");
+
 // MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URL)
@@ -23,6 +25,9 @@ app.get("*", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Routes
+app.use("/api/user", userRoute);
 
 app.listen(5500, () => {
   console.log("Backend server is running!");
