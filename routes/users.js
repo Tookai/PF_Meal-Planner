@@ -25,4 +25,39 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// LOGIN A USER
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({ pseudo: req.body.pseudo });
+    !user && res.status(404).json(`Il n'y a pas d'utilisateur avec ce pseudo.`);
+
+    const validPw = await bcrypt.compare(req.body.password, user.password);
+    !validPw && res.status(400).json(`Le mot de passe est incorrect.`);
+
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_CODE, { expiresIn: "3d" });
+
+    res.status(200).json({ user: user.pseudo, token });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//
+//
+//
+//
+//
+//
+//
+
+// Search query
+router.get("/user", async (req, res) => {
+  try {
+    const found = await User.find({ pseudo: /pierre/ });
+    res.status(200).json(found);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

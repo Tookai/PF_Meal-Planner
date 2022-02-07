@@ -18,14 +18,6 @@ mongoose
     console.error(err);
   });
 
-app.get("*", async (req, res) => {
-  try {
-    res.status(200).json("Salut c le serveur");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // Routes
 app.use("/api/user", userRoute);
 
