@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const userCtrl = require("../controllers/user");
 
-const auth = require("../middlewares/auth");
+const isAdmin = require("../middlewares/auth");
 
 // REGISTER A USER
 router.post("/register", userCtrl.register);
@@ -18,7 +18,9 @@ router.post("/login", userCtrl.login);
 //
 
 // Search query
-router.get("/user", auth, async (req, res) => {
+const User = require("../models/User");
+//
+router.get("/user", isAdmin, async (req, res) => {
   try {
     const user = req.user;
     const found = await User.find({ pseudo: /pierre/ });
