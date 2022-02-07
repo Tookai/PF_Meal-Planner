@@ -9,6 +9,7 @@ app.use(cors());
 dotenv.config();
 
 const userRoute = require("./routes/users");
+const mealRoute = require("./routes/meals");
 
 // MongoDB Connection
 mongoose
@@ -20,6 +21,7 @@ mongoose
 
 // Routes
 app.use("/api/user", userRoute);
+app.use("/api/meal", mealRoute);
 
 app.listen(5500, () => {
   console.log("Backend server is running!");
