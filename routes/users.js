@@ -36,7 +36,7 @@ router.post("/login", async (req, res) => {
     const validPw = await bcrypt.compare(req.body.password, user.password);
     !validPw && res.status(400).json(`Le mot de passe est incorrect.`);
 
-    const token = jwt.sign({ userId: user._id, userAdmin: user.admin }, process.env.JWT_CODE, { expiresIn: "3d" });
+    const token = jwt.sign({ userId: user._id, pseudo: user.pseudo, userAdmin: user.admin }, process.env.JWT_CODE, { expiresIn: "3d" });
 
     res.status(200).json({ user: user.pseudo, token });
   } catch (err) {
@@ -57,7 +57,7 @@ router.get("/user", auth, async (req, res) => {
   try {
     const user = req.user;
     const found = await User.find({ pseudo: /pierre/ });
-    res.status(200).json({found, user});
+    res.status(200).json({ found, user });
   } catch (err) {
     res.status(500).json(err);
   }
