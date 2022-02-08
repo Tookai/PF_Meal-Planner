@@ -10,6 +10,7 @@ dotenv.config();
 
 const userRoute = require("./routes/users");
 const mealRoute = require("./routes/meals");
+const favoriteRoute = require("./routes/favorites");
 
 // MongoDB Connection
 mongoose
@@ -22,6 +23,7 @@ mongoose
 // Routes
 app.use("/api/user", userRoute);
 app.use("/api/meal", mealRoute);
+app.use("/api/favorite", favoriteRoute);
 
 app.listen(5500, () => {
   console.log("Backend server is running!");

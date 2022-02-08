@@ -12,7 +12,7 @@ router.get("/all", mealCtrl.readAllMeals);
 // SEARCH INGREDIENT
 router.get("/i/:ingredient", mealCtrl.searchByIngredients);
 
-//SEARCH TITLE
+// SEARCH TITLE
 router.get("/t/:title", mealCtrl.searchByTitle);
 
 // DELETE MEAL
