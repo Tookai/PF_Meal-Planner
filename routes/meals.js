@@ -18,4 +18,10 @@ router.get("/t/:title", mealCtrl.searchByTitle);
 // DELETE MEAL
 router.delete("", isAdmin, mealCtrl.deleteMeal);
 
+// GET ONE RANDOM MEAL
+router.get("/one", mealCtrl.oneRandom);
+
+// GET SEVEN RANDOM MEAL
+router.get("/seven", mealCtrl.sevenRandom);
+
 module.exports = router;

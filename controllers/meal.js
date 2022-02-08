@@ -54,3 +54,21 @@ exports.deleteMeal = async (req, res) => {
     res.status(500).json(err);
   }
 };
+
+exports.oneRandom = async (req, res) => {
+  try {
+    let one = await Meal.aggregate([{ $sample: { size: 1 } }]);
+    res.status(200).json(one);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+exports.sevenRandom = async (req, res) => {
+  try {
+    let one = await Meal.aggregate([{ $sample: { size: 7 } }]);
+    res.status(200).json(one);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
