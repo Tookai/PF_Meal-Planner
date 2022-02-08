@@ -1,31 +1,17 @@
 const router = require("express").Router();
-const Favorite = require("../models/Favorite");
-const Meal = require("../models/Meal");
-
 const isLogged = require("../middlewares/auth");
+const favoriteCtrl = require("../controllers/favorite");
 
-router.post("", isLogged, async (req, res) => {
-  try {
-    const newFavorite = new Favorite({
-      mealId: req.body.mealId,
-      userId: req.user.userId,
-    });
-    await newFavorite.save();
-    res.status(200).json(`Le plat a été ajouté aux favoris.`);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// ADD MEAL TO FAVORITE
+router.post("", isLogged, favoriteCtrl.addMeal);
 
-router.get("", isLogged, async (req, res) => {
-  try {
-    const favorites = await Favorite.find({ userId: req.user.userId });
-    const mealsId = favorites.map((meal) => meal.mealId);
-    const favMeals = await Meal.find({ _id: mealsId });
-    res.status(200).json(favMeals);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// GET MEALS FROM FAVORITE LIST
+router.get("", isLogged, favoriteCtrl.getMeals);
+
+// DELETE ONE FAV MEAL BY MEAL_ID
+router.delete("", isLogged, favoriteCtrl.deleteOne);
+
+// DELETE ALL MEALS IN FAV LIST BY USER_ID
+router.delete("/all", isLogged, favoriteCtrl.deleteAll);
 
 module.exports = router;
