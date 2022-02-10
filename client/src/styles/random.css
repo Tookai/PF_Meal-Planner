@@ -16,4 +16,21 @@
   object-fit: contain;
 }
 
+.random__reloadBtn {
+  margin: 2rem;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  transition: all 500ms ease-in;
+  position: absolute;
+  bottom: 5rem;
+}
 
+.random__reloadBtn:hover {
+  background-color: rgb(97, 206, 102);
+}
+
+.random__reloadBtn:active {
+  transform: scale(0.95);
+}
