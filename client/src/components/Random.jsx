@@ -1,19 +1,12 @@
 import "../styles/random.css";
 import { Link } from "react-router-dom";
+import Recette from "./Recette";
 
-const Random = ({ jour, plat }) => {
+const Random = () => {
+  const ing = ["salade", "riz", "brebis"];
   return (
     <div className="random">
-      <p>
-        {jour} : <br /> <Link to="/recette">{plat}</Link> !
-      </p>
-      <img
-        src="https://images.pexels.com/photos/2703468/pexels-photo-2703468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        alt="Pâtes Carbonara"
-      />
-      <button className="random__addBtn">
-        Ajouter les ingrédients à <br /> la liste des courses
-      </button>
+      <Recette jour="Ce soir" plat="Gratin de pate" ingredients={ing} />
     </div>
   );
 };

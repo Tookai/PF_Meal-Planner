@@ -8,6 +8,25 @@ const Axios = axios.create({
   headers: { Authorization: `Bearer ${Cookies.get("user") ? JSON.parse(Cookies.get("user")).token : ""}` },
 });
 
+// ----------------
+// ===================
+// ----------------
+// USER
+
+// user registration
 export const registerUser = (user) => Axios.post("user/register", user).then((res) => res.data);
 
+// user login
 export const loginUser = (user) => Axios.post("user/login", user).then((res) => res.data);
+
+// ----------------
+// ===================
+// ----------------
+
+// ----------------
+// ===================
+// ----------------
+
+// ----------------
+// ===================
+// ----------------

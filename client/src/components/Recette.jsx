@@ -1,15 +1,18 @@
 import "../styles/recette.css";
 
-const Recette = () => {
+const Recette = ({ jour, plat, ingredients }) => {
   return (
     <div className="recette">
-      Afin de réaliser cette recette pour 2 personnes vous aurez besoin de :
+      <p>{jour} :</p>
+      <h2>{plat}</h2>
+      <p>Afin de réaliser cette recette vous aurez besoin de :</p>
       <ul>
-        <li>240g de pâtes</li>
-        <li>2 boites de lardons</li>
-        <li>1 oignon</li>
-        <li>1 brique de crème fraîche</li>
+        {ingredients.map((ing, i) => (
+          <li key={i}>{ing}</li>
+        ))}
       </ul>
+
+      <button className="recette__addBtn">Ajouter aux favoris</button>
     </div>
   );
 };

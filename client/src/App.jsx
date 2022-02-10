@@ -15,7 +15,7 @@ function App() {
       <Navbar />
       <div className="App">
         <Routes>
-          <Route path="" element={<Random jour="Ce soir on pourrait manger" plat="Pâte Carbonara" />} />
+          <Route path="" element={<Random />} />
           <Route path="semaine" element={<Week />} />
           <Route path="liste" element={<Liste />} />
           <Route path="recette" element={<Recette />} />

@@ -1,29 +1,30 @@
 import "../styles/week.css";
-import Random from "./Random";
+import Recette from "./Recette";
 
 const Week = () => {
+  const ing = ["salade", "riz", "brebis"];
   return (
     <div className="week">
       <div className="box">
-        <Random jour="Lundi" plat="Soupe au choux" />
+        <Recette jour="Lundi" plat="Soupe au choux" ingredients={ing} />
       </div>
       <div className="box">
-        <Random jour="Mardi" plat="Babibel" />
+        <Recette jour="Mardi" plat="Babibel" ingredients={ing} />
       </div>
       <div className="box">
-        <Random jour="Mercredi" plat="Salade" />
+        <Recette jour="Mercredi" plat="Salade" ingredients={ing} />
       </div>
       <div className="box">
-        <Random jour="Jeudi" plat="Purée" />
+        <Recette jour="Jeudi" plat="Purée" ingredients={ing} />
       </div>
       <div className="box">
-        <Random jour="Vendredi" plat="Pates" />
+        <Recette jour="Vendredi" plat="Pates" ingredients={ing} />
       </div>
       <div className="box">
-        <Random jour="Samedi" plat="Legumes" />
+        <Recette jour="Samedi" plat="Legumes" ingredients={ing} />
       </div>
       <div className="box">
-        <Random jour="Dimanche" plat="Poulet" />
+        <Recette jour="Dimanche" plat="Poulet" ingredients={ing} />
       </div>
     </div>
   );

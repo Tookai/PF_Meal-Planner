@@ -16,22 +16,4 @@
   object-fit: contain;
 }
 
-.random__addBtn {
-  padding: 0.3rem;
-  width: fit-content;
-  border-radius: 0.3rem;
-  border: none;
-  outline: none;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.8rem;
-  transition: all 200ms ease-out;
-  cursor: pointer;
-}
 
-.random__addBtn:hover {
-  background-color: rgb(188, 238, 255);
-}
-
-.random__addBtn:active {
-  transform: scale(0.95);
-}
