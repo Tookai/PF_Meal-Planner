@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useMutation } from "react-query";
 import "../styles/add.css";
+import * as api from "../apiCalls";
 
 const Add = () => {
   const [raw, setRaw] = useState(["", "", ""]);
@@ -11,6 +13,13 @@ const Add = () => {
 
   const [recipe, setRecipe] = useState([]);
 
+  const { mutate, isLoading } = useMutation(api.createMeal, {
+    onSuccess: () => {
+      alert("ton plat a été ajouté beau gosse.");
+      setRecipe([]);
+    },
+  });
+
   const handleIngredient = (e) => {
     e.preventDefault();
     setRecipe([...recipe, `${quantity}${unit} ${ingredient}`]);
@@ -18,9 +27,9 @@ const Add = () => {
 
   const handleAdd = (e) => {
     e.preventDefault();
-    const plat = { title: title, ingredients: recipe };
-    if (plat.title !== "" && plat.ingredients.length !== 0) {
-      console.log(plat);
+    const meal = { title: title, ingredients: recipe };
+    if (meal.title !== "" && meal.ingredients.length !== 0) {
+      mutate(meal);
     }
   };
 
@@ -80,9 +89,13 @@ const Add = () => {
               ))}
           </div>
 
-          <button className="add__btnAdd" onClick={handleAdd}>
-            Ajouter le plat !
-          </button>
+          {isLoading ? (
+            <button className="add__btnAdd">...</button>
+          ) : (
+            <button className="add__btnAdd" onClick={handleAdd}>
+              Ajouter le plat !
+            </button>
+          )}
         </form>
       </div>
     </div>

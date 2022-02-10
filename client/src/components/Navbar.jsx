@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="navbar pad1">
       <div>
         <p>Salut, {user}. </p>
-        <h1 onClick={handleClick}>On manque quoi ?</h1>
+        <h1 onClick={handleClick}>On mange quoi ?</h1>
       </div>
 
       <div className="navbar__wrapper">

@@ -28,6 +28,8 @@ export const oneRandom = () => Axios.get("/meal/one").then((res) => res.data);
 
 export const sevenRandom = () => Axios.get("/meal/seven").then((res) => res.data);
 
+export const createMeal = (meal) => Axios.post("/meal", meal).then((res) => res.data);
+
 // ----------------
 // ===================
 // ----------------
