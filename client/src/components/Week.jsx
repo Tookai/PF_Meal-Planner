@@ -1,31 +1,22 @@
+import { useQuery } from "react-query";
 import "../styles/week.css";
 import Recette from "./Recette";
+import * as api from "../apiCalls";
 
 const Week = () => {
-  const ing = ["salade", "riz", "brebis"];
+  const { data, isLoading, isError, refetch } = useQuery("one random", api.sevenRandom);
+  const week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+
+  if (isLoading || isError) {
+    return <div>...</div>;
+  }
   return (
     <div className="week">
-      <div className="box">
-        <Recette jour="Lundi" plat="Soupe au choux" ingredients={ing} />
-      </div>
-      <div className="box">
-        <Recette jour="Mardi" plat="Babibel" ingredients={ing} />
-      </div>
-      <div className="box">
-        <Recette jour="Mercredi" plat="Salade" ingredients={ing} />
-      </div>
-      <div className="box">
-        <Recette jour="Jeudi" plat="Purée" ingredients={ing} />
-      </div>
-      <div className="box">
-        <Recette jour="Vendredi" plat="Pates" ingredients={ing} />
-      </div>
-      <div className="box">
-        <Recette jour="Samedi" plat="Legumes" ingredients={ing} />
-      </div>
-      <div className="box">
-        <Recette jour="Dimanche" plat="Poulet" ingredients={ing} />
-      </div>
+      {data.map((meal, index) => (
+        <div className="box">
+          <Recette key={meal._id} jour={week[index]} plat={meal.title} ingredients={meal.ingredients} />
+        </div>
+      ))}
     </div>
   );
 };

@@ -26,6 +26,8 @@ export const loginUser = (user) => Axios.post("user/login", user).then((res) => 
 
 export const oneRandom = () => Axios.get("/meal/one").then((res) => res.data);
 
+export const sevenRandom = () => Axios.get("/meal/seven").then((res) => res.data);
+
 // ----------------
 // ===================
 // ----------------
