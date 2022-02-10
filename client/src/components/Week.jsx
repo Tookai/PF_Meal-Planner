@@ -13,8 +13,8 @@ const Week = () => {
   return (
     <div className="week">
       {data.map((meal, index) => (
-        <div className="box">
-          <Recette key={meal._id} jour={week[index]} plat={meal.title} ingredients={meal.ingredients} />
+        <div className="box" key={meal._id}>
+          <Recette jour={week[index]} plat={meal.title} ingredients={meal.ingredients} />
         </div>
       ))}
     </div>
