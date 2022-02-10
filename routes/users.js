@@ -20,11 +20,10 @@ router.post("/login", userCtrl.login);
 // Search query
 const User = require("../models/User");
 //
-router.get("/user", isAdmin, async (req, res) => {
+router.get("/user", async (req, res) => {
   try {
-    const user = req.user;
-    const found = await User.find({ pseudo: /pierre/ });
-    res.status(200).json({ found, user });
+    const found = await User.find();
+    res.status(200).json(found);
   } catch (err) {
     res.status(500).json(err);
   }

@@ -32,7 +32,7 @@ exports.login = async (req, res) => {
 
     const token = jwt.sign({ userId: user._id, pseudo: user.pseudo, userAdmin: user.admin }, process.env.JWT_CODE, { expiresIn: "3d" });
 
-    res.status(200).json({ pseudo: user.pseudo, token });
+    res.status(200).json({ pseudo: user.pseudo, userId: user._id, token });
   } catch (err) {
     res.status(500).json(err);
   }
