@@ -30,6 +30,10 @@ export const sevenRandom = () => Axios.get("/meal/seven").then((res) => res.data
 
 export const createMeal = (meal) => Axios.post("/meal", meal).then((res) => res.data);
 
+export const searchTitle = (title) => Axios.get(`/meal/t/${title}`).then((res) => res.data);
+
+export const searchIngredient = (title) => Axios.get(`/meal/i/${title}`).then((res) => res.data);
+
 // ----------------
 // ===================
 // ----------------
